@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BNI Card Builder</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="builder-shell">
+      <header class="builder-header">
+        <p class="builder-kicker">BNI Products</p>
+        <h1>BNI Card Builder</h1>
+      </header>
+
+      <section class="builder-grid" aria-label="Card editor">
+        <section class="preview-panel" aria-labelledby="preview-title">
+          <div class="panel-heading">
+            <h2 id="preview-title">Preview</h2>
+            <span>85 x 55 mm</span>
+          </div>
+
+          <div class="preview-stage">
+            <canvas id="cardCanvas" aria-label="Live card preview"></canvas>
+          </div>
+        </section>
+
+        <form class="control-panel" aria-label="Card details">
+          <div class="field-group">
+            <label for="nameInput">Name</label>
+            <input id="nameInput" name="name" type="text" value="First Last Name" autocomplete="name" maxlength="80">
+          </div>
+
+          <div class="field-group">
+            <label for="roleInput">Job role</label>
+            <input id="roleInput" name="role" type="text" value="Job Title" maxlength="80">
+          </div>
+
+          <div class="field-group">
+            <label for="thirdInput">Third text</label>
+            <input id="thirdInput" name="thirdText" type="text" value="Third Text Line" maxlength="80">
+          </div>
+
+          <fieldset class="colour-field">
+            <legend>Colour</legend>
+            <div class="swatch-row" aria-label="Base colour">
+              <button class="swatch-button is-active" type="button" data-colour="red" aria-pressed="true">
+                <span class="swatch swatch-red" aria-hidden="true"></span>
+                <span>Red</span>
+              </button>
+              <button class="swatch-button" type="button" data-colour="green" aria-pressed="false">
+                <span class="swatch swatch-green" aria-hidden="true"></span>
+                <span>Green</span>
+              </button>
+              <button class="swatch-button" type="button" data-colour="blue" aria-pressed="false">
+                <span class="swatch swatch-blue" aria-hidden="true"></span>
+                <span>Blue</span>
+              </button>
+            </div>
+          </fieldset>
+
+          <button class="download-button" id="downloadButton" type="button">Download PDF</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
